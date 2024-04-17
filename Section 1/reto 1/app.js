@@ -4,7 +4,6 @@ let Instance, initialBudget, travelBudget;
 
 Instance = prompt("how many days will you stay?: ");
 console.log(`You stay for:`, Instance);
-
 initialBudget = prompt("Your budget: ");
 console.log( `Tu presupuesto es de: `, initialBudget);
 
