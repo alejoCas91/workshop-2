@@ -1,84 +1,23 @@
+
 const souvenirs = [];
-let flag = false;
 
-const validate = (type, value) => typeof value === type && !Number.isNaN(value);
-
-if (confirm("Quieres llevar un recuerdo?")) {
-  let name = prompt("Ingresa el nombre del recuerdo");
-  let cost = prompt("ingresa el costo del recuerdo");
-  cost = Number(cost);
-  let available = confirm("Esta disponible?");
-  flag =
-    validate("string", name) &&
-    validate("number", cost) &&
-    validate("boolean", available);
-  if (flag === true) {
-    const souvenir = {
-      name: name,
-      cost: cost,
-      available: available,
-    };
-    souvenirs.unshift(souvenir);
-    console.log(souvenirs);
-  }
-}
-
-if (confirm("Desea ingresar un recuerdo")) {
-  let name = prompt("Ingresa el nombre del recuerdo");
-  let cost = prompt("ingresa el costo del recuerdo");
-  cost = Number(cost);
-  let available = confirm("Esta disponible?");
-  flag =
-    validate("string", name) &&
-    validate("number", cost) &&
-    validate("boolean", available);
-  if (flag === true) {
-    const souvenir = {
-      name: name,
-      cost: cost,
-      available: available,
-    };
-    souvenirs.unshift(souvenir);
-    console.log(souvenirs);
-  }
-}
-
-if (confirm("Desea ingresar un recuerdo")) {
-  let name = prompt("Ingresa el nombre del recuerdo");
-  let cost = prompt("ingresa el costo del recuerdo");
-  cost = Number(cost);
-  let available = confirm("Esta disponible?");
-  flag =
-    validate("string", name) &&
-    validate("number", cost) &&
-    validate("boolean", available);
-  if (flag === true) {
-    const souvenir = {
-      name: name,
-      cost: cost,
-      available: available,
-    };
-    souvenirs.unshift(souvenir);
-    console.log(souvenirs);
-  }
-}
-
-if (confirm("Desea ingresar un souvenir")) {
-  let name = prompt("Ingresa el nombre del recuerdo");
-  let cost = prompt("ingresa el costo del recuerdo");
-  cost = Number(cost);
-  let available = confirm("Esta disponible?");
-  flag =
-    validate("string", name) &&
-    validate("number", cost) &&
-    validate("boolean", available);
-  if (flag === true) {
-    const souvenir = {
-      name: name,
-      cost: cost,
-      available: available,
-    };
-    souvenirs.unshift(souvenir);
-    console.log(souvenirs);
-  }
+const name = prompt("Please enter the name of the souvenir (or STOP to finish):");
+if (name === "STOP") {
+    console.log("No souvenirs were added.");
+} else {
+    const cost = +prompt("Please enter the cost of the souvenir:");
+    if (cost < 0) {
+        console.error("Souvenir cost should be a positive number");
+    } else {
+        const available = confirm("Is the souvenir available?");
+        souvenirs.unshift({
+            name,
+            cost,
+            available
+        });
+    }
+    console.log("List of souvenirs:");
+    souvenirs.forEach((souvenir, index) => {
+        console.log(${index + 1}. ${souvenir.name} - $${souvenir.cost} - ${souvenir.available ? "Available" : "Not available"});
+    });
 }
