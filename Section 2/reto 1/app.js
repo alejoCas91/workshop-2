@@ -7,9 +7,14 @@ console.log(work);
 
 if (energy && climate && work) {
   alert("Puedes ir a hacer ejercicio!!");
+} else if (energy && work) {
+  alert("quedate en casa trabajando proyectos personales");
 }
-else{
-    alert("Presionaste cancelar 1 vez")
+  else if (climate && work) {
+  alert("tomate el dia libre");
+} else if (work) {
+  alert("Ve a una cafeteria");
 }
-
-
+  else if (energy) {
+  alert("tomate el dia libre");
+}
