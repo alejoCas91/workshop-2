@@ -1,4 +1,4 @@
-const clima = prompt("Ingresa el pronóstico del clima (e.j. soleado, lluvioso, etc.)");
+const clima = prompt("Ingresa el pronóstico del clima (soleado, lluvioso)");
 const espacioDisponible = parseInt(prompt("Ingresa el espacio disponible en tu maleta en kg"));
 const pesoTotalPermitido = parseInt(prompt("Ingresa el límite de peso de tu equipaje en kg"));
 
